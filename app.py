@@ -20,7 +20,9 @@ def movies():
                     "image_url": "https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/02/KXC1W2-920x584.jpg"
                     }
                     """
-    return render_template('movie.html', movie={})
+    movie= json.loads(json_string)
+    # print(parsed_json['title'] + parsed_json['releaseDate'] +parsed_json['image_url'])
+    return render_template('movie.html', movie=movie)
 
 
 @app.route('/tvshows')
